@@ -16,24 +16,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
+          textTheme:
+              const TextTheme(displayMedium: TextStyle(color: Colors.white)),
           brightness: Brightness.dark,
           useMaterial3: true,
-          scaffoldBackgroundColor: HexColor("#23252D"),
-          elevatedButtonTheme: ElevatedButtonThemeData(
+          scaffoldBackgroundColor: HexColor("#010101"),
+          elevatedButtonTheme: const ElevatedButtonThemeData(
               style: ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(HexColor("#272B33")),
-            shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20))),
-          ))),
+                  backgroundColor:
+                      MaterialStatePropertyAll(Color.fromARGB(100, 30, 30, 30)),
+                  shape: MaterialStatePropertyAll(CircleBorder())))),
       theme: ThemeData(
+          textTheme:
+              const TextTheme(displayMedium: TextStyle(color: Colors.black)),
           useMaterial3: true,
           scaffoldBackgroundColor: Colors.white,
           elevatedButtonTheme: ElevatedButtonThemeData(
               style: ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(HexColor("#F7F7F7")),
-            shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20))),
-          ))),
+                  backgroundColor:
+                      MaterialStatePropertyAll(HexColor("#F9F9F9")),
+                  shape: const MaterialStatePropertyAll(CircleBorder())))),
       home: CalculatorPage(),
     );
   }
